@@ -11,5 +11,5 @@ pipeline {
         sh 'docker run -d -p 9000:9000 myapp:1.0'
         }
     }
-  }
+    }
 }
