@@ -1,11 +1,11 @@
 {
-  "name": "jenkins-tests",
+  "name": "docker-builder",
   "version": "1.0.0",
   "description": "This is a test",
   "main": "app.js",
   "scripts": {
-    "start": "pm2 start src/app.js",
-    "stop": "pm2 stop app.js",
+    "start": "pm2-docker start app.js",
+    "stop": "pm2-docker stop app.js",
     "test": "mocha --reporter spec tests/*",
     "test-junit": "mocha --reporter mocha-junit-reporter tests/*"
   },

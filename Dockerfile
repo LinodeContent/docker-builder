@@ -1,13 +1,15 @@
 FROM keymetrics/pm2:6
 
+RUN mkdir -p /home/nodejs/app
+WORKDIR /home/nodejs/app
+
 # Bundle APP files
-COPY src src/
-COPY package.json .
-COPY pm2.json .
+COPY package.json /home/nodejs/app
+RUN npm install
+COPY . /home/nodejs/app
 
 # Install app dependencies
 ENV NPM_CONFIG_LOGLEVEL warn
-RUN npm install --production
 
 # Show current folder structure in logs
 RUN ls -al -R
