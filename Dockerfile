@@ -14,4 +14,4 @@ ENV NPM_CONFIG_LOGLEVEL warn
 # Show current folder structure in logs
 RUN ls -al -R
 
-CMD [ "pm2-docker", "start" ]
+CMD [ "npm", "start" ]
